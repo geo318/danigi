@@ -5,3 +5,9 @@ export const navItems = [
 	{ name: 'ჩვენს შესახებ', href: '/about' },
 	{ name: 'კონტაქტი', href: '/contact' }
 ];
+
+export const locales = {
+	en: '🇬🇧',
+	ka: '🇬🇪',
+	ru: '🇷🇺'
+} as const;
