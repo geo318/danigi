@@ -1,4 +1,4 @@
-export const navbar = [
+export const navItems = [
 	{ name: 'ავტომობილები', href: '/' },
 	{ name: 'ტვირთები', href: '/needs' },
 	{ name: 'ფასები', href: '/service' },

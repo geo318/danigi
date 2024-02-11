@@ -6,7 +6,13 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$paraglide: './src/paraglide',
+			$src: './src',
+			$lib: './src/lib',
+			$components: './src/components',
+		}
 	}
 };
 

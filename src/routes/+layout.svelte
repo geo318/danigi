@@ -1,5 +1,9 @@
 <script>
 	import '../app.css';
+	import { ParaglideJS } from '@inlang/paraglide-js-adapter-sveltekit';
+	import { i18n } from '$lib/i18n';
 </script>
 
-<slot />
+<ParaglideJS {i18n}>
+	<slot />
+</ParaglideJS>
