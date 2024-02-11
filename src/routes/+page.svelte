@@ -1,6 +1,6 @@
 <script>
 	import { Navbar, Fold, Button, Heading, Cars } from '$components';
-	import { infoIcons, mb, hk, oc, rs } from '$lib';
+	import { infoIcons, autoList } from '$lib';
 </script>
 
 <Navbar />
@@ -57,75 +57,24 @@
 	<div class="h-10" />
 
 	<div class="grid grid-cols-4 gap-10 justify-between mt-10">
-		<section class="border border-zinc-300 rounded-lg overflow-hidden">
-			<figure class="relative">
-				<img src={mb} alt="" class="w-full" />
-				<div class="absolute inset-0 bg-black bg-opacity-50" />
-			</figure>
+		{#each autoList as { name, bg, list }}
+			<section class="border border-zinc-300 rounded-lg overflow-hidden">
+				<figure class="relative">
+					<img src={bg} alt={name} class="w-full" />
+					<div class="absolute inset-0 bg-black bg-opacity-50" />
+					<figcaption
+						class="text-white absolute z-10 inset-0 flex items-center justify-center text-2xl font-medium"
+					>
+						{name}
+					</figcaption>
+				</figure>
 
-			<ul class="p-5 flex flex-col gap-2">
-				<li>Mercedes W211</li>
-				<li>Mercedes W213</li>
-				<li>Mercedes 639 Viano Lang</li>
-				<li>Mercedes W212</li>
-				<li>Mercedes 447 V Class Lang</li>
-				<li>Mercedes 639 Viano Extralang</li>
-				<li>Mercedes 447 V Class Extralang</li>
-				<li>BMW E46</li>
-				<li>BMW X1,X5,X6,X7</li>
-				<li>BMW E60</li>
-			</ul>
-		</section>
-		<section class="border border-zinc-300 rounded-lg overflow-hidden">
-			<figure class="relative">
-				<img src={hk} alt="" class="w-full" />
-				<div class="absolute inset-0 bg-black bg-opacity-50" />
-			</figure>
-			<ul class="p-5 flex flex-col gap-2">
-				<li>Hyundai Accent</li>
-				<li>Hyundai Matrix</li>
-				<li>Hyundai i30</li>
-				<li>Hyundai i30 Kombi/Hatchback</li>
-				<li>Hyundai Sonata</li>
-				<li>Hyundai Santafe</li>
-				<li>Hyundai Tucson</li>
-				<li>Kia Rio</li>
-				<li>Kia Ceed Kombi/Karavan</li>
-				<li>Kia Ceed Limousine/Hatchback</li>
-				<li>Kia Carens</li>
-			</ul>
-		</section>
-
-		<section class="border border-zinc-300 rounded-lg overflow-hidden">
-			<figure class="relative">
-				<img src={rs} alt="" class="w-full" />
-				<div class="absolute inset-0 bg-black bg-opacity-50" />
-			</figure>
-			<ul class="p-5 flex flex-col gap-2">
-				<li>Renault Dacia Logan Kombi/Karavan</li>
-				<li>Renault Megane Kombi/Karavan</li>
-				<li>Renault Scenic Hatchback</li>
-				<li>Renault Scenic - Karavan</li>
-				<li>Skoda Fabia Kombi/Karavan</li>
-				<li>Skoda Roomster Kombi/Karavan</li>
-			</ul>
-		</section>
-
-		<section class="border border-zinc-300 rounded-lg overflow-hidden">
-			<figure class="relative">
-				<img src={oc} alt="" class="w-full" />
-				<div class="absolute inset-0 bg-black bg-opacity-50" />
-			</figure>
-			<ul class="p-5 flex flex-col gap-2">
-				<li>Ford Connect</li>
-				<li>Ford Transit</li>
-				<li>Fiat Doblo</li>
-				<li>OPEL Astra H</li>
-				<li>OPEL Combo</li>
-				<li>OPEL Zafira</li>
-				<li>TOYOTA Corolla-Hatchback</li>
-				<li>TOYOTA Corolla Kombi/Karavan</li>
-			</ul>
-		</section>
+				<ul class="p-5 flex flex-col gap-3">
+					{#each list as c}
+						<li>{c}</li>
+					{/each}
+				</ul>
+			</section>
+		{/each}
 	</div>
 </section>
