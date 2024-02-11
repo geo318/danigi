@@ -11,7 +11,12 @@ import hyundai from './hyundai.svg';
 import volvo from './volvo.svg';
 import toyota from './toyota.svg';
 import vw from './vw.svg';
+import mb from './mb.png';
+import hk from './hk.png';
+import rs from './rs.png';
+import oc from './oc.png';
 
+export { mb, hk, rs, oc };
 export const cars = [
 	audi,
 	bmw,
