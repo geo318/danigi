@@ -75,3 +75,22 @@ export const autoList = [
 		]
 	} as const
 ];
+
+export const generateCargoSectionKeys = () => {
+	const section = 3;
+	type Section = 1 | 2 | 3;
+	const cargoSectionConfig = [] as {
+		h: `cargo_${Section}_h`;
+		p: `cargo_${Section}_p`;
+		li: `cargo_${Section}_li${Section | 4}`[];
+	}[];
+	for (let i = 0; i < section; i++) {
+		const num = (i + 1) as Section;
+		cargoSectionConfig[i] = {
+			h: `cargo_${num}_h`,
+			p: `cargo_${num}_p`,
+			li: [`cargo_${num}_li1`, `cargo_${num}_li2`, `cargo_${num}_li3`, `cargo_${num}_li4`]
+		};
+	}
+	return cargoSectionConfig;
+};

@@ -1,80 +1,103 @@
 <script>
 	import { Navbar, Fold, Button, Heading, Cars } from '$components';
-	import { infoIcons, autoList } from '$lib';
+	import { infoIcons, autoList, bodyType1, bodyType2, generateCargoSectionKeys } from '$lib';
+	import * as m from '$paraglide/messages';
 </script>
 
 <Navbar />
 
 <Fold />
 
-<Heading>ავტომობილების ტრანსპორტირება</Heading>
+<Heading>{m.auto_transport()}</Heading>
 
-<section class="max-w-[100rem] mx-20 p-10 rounded-3xl bg-white grid grid-cols-2 gap-20">
-	<div>
-		<h5 class="mb-8 text-2xl font-medium">რატომ უნდა აირჩიოთ Danigi?</h5>
-		<p class="mt-2 leading-relaxed">
-			მრავალი მიზეზი არსებობს, რის გამოც ჩვენი მომხმარებლები ირჩევენ ჩვენს მომსახურებას
-			ავტომობილების ტრანსპორტირებისთვის. ჩვენ თავიდანვე აქტიურად ვართ ჩართულები პროცესში, იმისთვის,
-			რომ ზუსტად გავიგოთ თქვენი მოთხოვნები. დანიგის პროფესიონალი გუნდი, დაგეხმარებათ ამომწურავი
-			ინფორმაციის მიღებაში და შეკვეთის დაფიქსირებიდან მის ჩაბარებამდე, მჭიდრო კომუნიკაციაში იქნებიან
-			თქვენთან. ჩვენ გთავაზობთ საუკეთესო ტარიფს უმაღლესი ხარისხის მომსახურებისთვის, რომელსაც სხვაგან
-			ვერ ნახავთ!
-		</p>
-		<p class="mt-4 leading-relaxed">
-			თქვენი ავტომობილის უსაფრთხოდ და დროულად დანიშნულების ადგილზე ტრანსპორტირება, ჩვენი მთავარი
-			პრიორიტეტია.
-		</p>
-		<Button className="mt-10">ავტომობილების სია</Button>
-	</div>
-	<div>
-		<ul class="flex flex-col gap-6">
-			<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
-				<img src={infoIcons[0]} alt="icon" />
-				ავტომობილის მოძებნა გერმანიაში შეგიძლიათ შემდეგ საიტებზე: www.mobile.de www.autoscout24.de ან
-				სხვა ნებისმიერი საშუალებით.
-			</li>
-			<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
-				<img src={infoIcons[1]} alt="icon" />
-				დანიგის ექსპერტები ადგილზე აფასებენ თქვენს მიერ შერჩეული ავტომობილს, შემდეგ კი ხდება გადაყავთ
-				ავტოპარკამდე.
-			</li>
-			<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
-				<img src={infoIcons[2]} alt="icon" />
-				ვახდენთ ტვირთების გაფორმებას, თანმხლები დოკუმენტაციისა და საბაჟო საბუთების სწორად მომზადებას.
-			</li>
-			<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
-				<img src={infoIcons[3]} alt="icon" />
-				ვუზრუნველყოფთ ავტომობილების ტრანსპორტირებას გერმანიიდან საქართველოში, ევროსტანდარტის სრული დაცვით.
-			</li>
-		</ul>
-	</div>
-</section>
+<main class="flex flex-col items-center">
+	<section class="max-w-[100rem] w-full mx-20 p-10 rounded-3xl bg-white grid grid-cols-2 gap-20">
+		<div>
+			<h5 class="mb-8 text-2xl font-medium">{m.why_h()}</h5>
+			<p class="mt-2 leading-relaxed">
+				{m.why_p1()}
+			</p>
+			<p class="mt-4 leading-relaxed">
+				{m.why_p2()}
+			</p>
+			<Button className="mt-10">{m.why_action()}</Button>
+		</div>
+		<div>
+			<ul class="flex flex-col gap-6">
+				<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
+					<img src={infoIcons[0]} alt="icon" />
+					{m.why_li1()}
+				</li>
+				<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
+					<img src={infoIcons[1]} alt="icon" />
+					{m.why_li2()}
+				</li>
+				<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
+					<img src={infoIcons[2]} alt="icon" />
+					{m.why_li3()}
+				</li>
+				<li class="border border-[#ED1B23] rounded-2xl px-6 py-5 flex gap-5">
+					<img src={infoIcons[3]} alt="icon" />
+					{m.why_li4()}
+				</li>
+			</ul>
+		</div>
+	</section>
 
-<Heading>ჩამოიყვანე გერმანიიდან</Heading>
+	<Heading>{m.transport()}</Heading>
 
-<section class="max-w-[100rem] mx-20 p-10 rounded-3xl bg-white gap-20 overflow-hidden relative">
-	<Cars className="absolute top-0 inset-x-0 bg-black bg-opacity-70" />
-	<div class="h-10" />
+	<section
+		class="max-w-[100rem] w-full mx-20 p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
+	>
+		<Cars className="absolute top-0 inset-x-0 bg-black bg-opacity-70" />
+		<div class="h-10" />
 
-	<div class="grid grid-cols-4 gap-10 justify-between mt-10">
-		{#each autoList as { name, bg, list }}
-			<section class="border border-zinc-300 rounded-lg overflow-hidden">
-				<figure class="relative">
-					<img src={bg} alt={name} class="w-full" />
-					<div class="absolute inset-0 bg-black bg-opacity-50" />
-					<figcaption
-						class="text-white absolute z-10 inset-0 flex items-center justify-center text-2xl font-medium"
-					>
-						{name}
-					</figcaption>
-				</figure>
+		<div class="grid grid-cols-4 gap-10 justify-between mt-10">
+			{#each autoList as { name, bg, list }}
+				<section class="border border-zinc-300 rounded-lg overflow-hidden">
+					<figure class="relative">
+						<img src={bg} alt={name} class="w-full" />
+						<div class="absolute inset-0 bg-black bg-opacity-50" />
+						<figcaption
+							class="text-white absolute z-10 inset-0 flex items-center justify-center text-2xl font-medium"
+						>
+							{name}
+						</figcaption>
+					</figure>
 
-				<ul class="p-5 flex flex-col gap-3">
-					{#each list as c}
-						<li>{c}</li>
-					{/each}
-				</ul>
-			</section>
+					<ul class="p-5 flex flex-col gap-3">
+						{#each list as c}
+							<li>{c}</li>
+						{/each}
+					</ul>
+				</section>
+			{/each}
+		</div>
+	</section>
+
+	<Heading>{m.order()}</Heading>
+	<section
+		class="max-w-[100rem] mx-20 w-full p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
+	>
+		<h3 class="text-3xl text-medium text-center">{m.order_h3()}</h3>
+		<h5 class="text-center mt-8">{m.order_h5()}</h5>
+
+		<figure class="grid grid-cols-2 gap-10">
+			<div class="pt-8"><img src={bodyType1} alt="transport" class="w-full" /></div>
+			<div><img src={bodyType2} alt="transport" class="w-full" /></div>
+		</figure>
+	</section>
+
+	<Heading>{m.cargo_transport()}</Heading>
+	<section class="max-w-[100rem] mx-20 overflow-hidden relative grid grid-cols-4 w-full gap-5">
+		{#each generateCargoSectionKeys() as section}
+			<div class="bg-white rounded-lg">
+				<h5>{m[section.h]()}</h5>
+				<p>{m[section.p]()}</p>
+				{#each section.li as li}
+					<li>{m[li]()}</li>
+				{/each}
+			</div>
 		{/each}
-	</div>
-</section>
+	</section>
+</main>
