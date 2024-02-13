@@ -1,6 +1,6 @@
 <script>
 	import { Navbar, Fold, Button, Heading, Cars } from '$components';
-	import { infoIcons, autoList, bodyType1, bodyType2, generateCargoSectionKeys } from '$lib';
+	import { infoIcons, autoList, bodyType1, bodyType2, generateCargoSectionKeys, steps } from '$lib';
 	import * as m from '$paraglide/messages';
 </script>
 
@@ -89,15 +89,49 @@
 	</section>
 
 	<Heading>{m.cargo_transport()}</Heading>
-	<section class="max-w-[100rem] mx-20 overflow-hidden relative grid grid-cols-4 w-full gap-5">
+	<section
+		class="max-w-[100rem] mx-20 overflow-hidden relative grid grid-cols-3 w-full gap-5 text-slate-800"
+	>
 		{#each generateCargoSectionKeys() as section}
-			<div class="bg-white rounded-lg">
-				<h5>{m[section.h]()}</h5>
-				<p>{m[section.p]()}</p>
-				{#each section.li as li}
-					<li>{m[li]()}</li>
-				{/each}
+			<div class="bg-white rounded-2xl p-10">
+				<h5 class="text-center text-[#ED1B23] font-bold text-xl mb-10">{m[section.h]()}</h5>
+				<p class="text-sm leading-loose mb-5">{m[section.p]()}</p>
+				<ul class="flex flex-col gap-2 list-disc">
+					{#each section.li as li}
+						<li class="text-sm leading-loose text-balance">{m[li]()}</li>
+					{/each}
+				</ul>
 			</div>
 		{/each}
+	</section>
+
+	<Heading className="mb-5">{m.steps()}</Heading>
+	<section class="max-w-[100rem] mx-20 w-full pb-10 overflow-hidden relative">
+		<h3 class="text-center">
+			{m.steps_sub()}
+		</h3>
+	</section>
+	<section class="max-w-[100rem] mx-20 w-full p-10 overflow-hidden relative">
+		<div class="border-t border-zinc-300 w-full" />
+		<ul class="-mt-6 pb-10 flex justify-around">
+			{#each steps as step, i}
+				<li class="flex flex-col items-center">
+					<div
+						class="h-12 w-12 rounded-lg bg-[#ED1B23] text-white text-2xl flex items-center justify-center font-semibold"
+					>
+						{i + 1}
+					</div>
+					<h5 class="text-lg font-medium text-center mt-4 mb-6">{m[`steps_${step}_h`]()}</h5>
+					<p class="max-w-80 text-center">
+						{m[`steps_${step}_p`]()}
+					</p>
+				</li>
+			{/each}
+		</ul>
+	</section>
+
+	<Heading>{m.about_h()}</Heading>
+	<section class="max-w-[100rem] mx-20 w-full p-10 rounded-3xl bg-white overflow-hidden relative">
+		<p class="text-sm text-slate-800 leading-loose">{m.about()}</p>
 	</section>
 </main>

@@ -94,3 +94,5 @@ export const generateCargoSectionKeys = () => {
 	}
 	return cargoSectionConfig;
 };
+
+export const steps = ['order', 'del', 'pay'] as const;
