@@ -1,5 +1,5 @@
 <script>
-	import { Navbar, Fold, Button, Heading, Cars } from '$components';
+	import { Navbar, Fold, Button, Heading, Cars, Footer } from '$components';
 	import { infoIcons, autoList, bodyType1, bodyType2, generateCargoSectionKeys, steps } from '$lib';
 	import * as m from '$paraglide/messages';
 </script>
@@ -131,7 +131,11 @@
 	</section>
 
 	<Heading>{m.about_h()}</Heading>
-	<section class="max-w-[100rem] mx-20 w-full p-10 rounded-3xl bg-white overflow-hidden relative">
+	<section class="max-w-[100rem] w-full p-10 rounded-3xl bg-white overflow-hidden relative">
 		<p class="text-sm text-slate-800 leading-loose">{m.about()}</p>
+	</section>
+
+	<section class="max-w-[100rem] w-full relative mt-20">
+		<Footer />
 	</section>
 </main>
