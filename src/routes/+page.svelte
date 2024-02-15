@@ -8,9 +8,8 @@
 
 <Fold />
 
-<Heading>{m.auto_transport()}</Heading>
-
 <main class="flex flex-col items-center">
+	<Heading id="car">{m.auto_transport()}</Heading>
 	<section class="max-w-[100rem] w-full mx-20 p-10 rounded-3xl bg-white grid grid-cols-2 gap-20">
 		<div>
 			<h5 class="mb-8 text-2xl font-medium">{m.why_h()}</h5>
@@ -44,7 +43,7 @@
 		</div>
 	</section>
 
-	<Heading>{m.transport()}</Heading>
+	<Heading id="price">{m.transport()}</Heading>
 
 	<section
 		class="max-w-[100rem] w-full mx-20 p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
@@ -73,6 +72,10 @@
 				</section>
 			{/each}
 		</div>
+		<address class="text-right text-red-600 mt-5">
+			<span>&#128222; {m.price_insight()}</span>
+			<a href="tel:+995555666777">+995 555 666 777</a>
+		</address>
 	</section>
 
 	<Heading>{m.order()}</Heading>
@@ -88,7 +91,7 @@
 		</figure>
 	</section>
 
-	<Heading>{m.cargo_transport()}</Heading>
+	<Heading id="cargo">{m.cargo_transport()}</Heading>
 	<section
 		class="max-w-[100rem] mx-20 overflow-hidden relative grid grid-cols-3 w-full gap-5 text-slate-800"
 	>
@@ -130,7 +133,7 @@
 		</ul>
 	</section>
 
-	<Heading>{m.about_h()}</Heading>
+	<Heading id="about">{m.about_h()}</Heading>
 	<section class="max-w-[100rem] w-full p-10 rounded-3xl bg-white overflow-hidden relative">
 		<p class="text-sm text-slate-800 leading-loose">{m.about()}</p>
 	</section>

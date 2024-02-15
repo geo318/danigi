@@ -1,11 +1,11 @@
 import { mb, hk, oc, rs } from '../assets';
 
 export const navItems = [
-	{ name: 'nav_cars', href: '/' },
-	{ name: 'nav_cargo', href: '/needs' },
-	{ name: 'nav_prices', href: '/service' },
-	{ name: 'nav_about', href: '/about' },
-	{ name: 'nav_contact', href: '/contact' }
+	{ name: 'nav_cars', href: '#cars' },
+	{ name: 'nav_cargo', href: '#cargo' },
+	{ name: 'nav_prices', href: '#price' },
+	{ name: 'nav_about', href: '#about' },
+	{ name: 'nav_contact', href: '#contact' }
 ] as const;
 
 export const locales = {

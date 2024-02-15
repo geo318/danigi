@@ -23,7 +23,7 @@
 					<h4 class="mt-2">{m.fold_order()}</h4>
 					<h3 class="font-bold text-2xl balanced mt-auto">{m.fold_order_car_cargo()}</h3>
 					<Button className="mt-8 mb-auto">{m.fold_action()}</Button>
-					<a href="/" class="font-semibold underline">{m.fold_contact()}</a>
+					<a href="#footer" class="font-semibold underline">{m.fold_contact()}</a>
 				</section>
 
 				<div class="bg-black opacity-20 absolute inset-0 -z-10" />

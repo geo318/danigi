@@ -4,7 +4,7 @@
 	const array = [1, 2, 3, 4, 5, 6] as const;
 </script>
 
-<footer class="flex flex-col w-full text-white">
+<footer class="flex flex-col w-full text-white" id="contact">
 	<div
 		class="h-[15vw] w-full overflow-hidden relative flex flex-col gap-10 items-center justify-center"
 	>
