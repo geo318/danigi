@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
 	import { banner, pin } from '$lib';
 	import { Button, Cars } from '$components';
 	import * as m from '$paraglide/messages';
+
+	export let handleOpen: () => void;
 </script>
 
 <section class="grid-box text-white">
@@ -22,7 +24,9 @@
 					</div>
 					<h4 class="mt-2">{m.fold_order()}</h4>
 					<h3 class="font-bold text-2xl balanced mt-auto">{m.fold_order_car_cargo()}</h3>
-					<Button className="mt-8 mb-auto">{m.fold_action()}</Button>
+
+					<Button className="mt-8 mb-auto" onClick={handleOpen}>{m.fold_action()}</Button>
+
 					<a href="#footer" class="font-semibold underline">{m.fold_contact()}</a>
 				</section>
 

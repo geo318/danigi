@@ -2,11 +2,19 @@
 	import { Navbar, Fold, Button, Heading, Cars, Footer } from '$components';
 	import { infoIcons, autoList, bodyType1, bodyType2, generateCargoSectionKeys, steps } from '$lib';
 	import * as m from '$paraglide/messages';
+	import Form from '$src/components/Form.svelte';
+
+	let openForm = false;
+	const handleClose = () => (openForm = false);
+	const handleOpen = () => (openForm = true);
 </script>
 
 <Navbar />
 
-<Fold />
+<Fold {handleOpen} />
+{#if openForm}
+	<Form {handleClose} />
+{/if}
 
 <main class="flex flex-col items-center">
 	<Heading id="car">{m.auto_transport()}</Heading>
