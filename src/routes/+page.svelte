@@ -135,7 +135,7 @@
 		<p class="text-sm text-slate-800 leading-loose">{m.about()}</p>
 	</section>
 
-	<section class="max-w-[100rem] w-full relative mt-20">
+	<section class="w-full relative mt-20">
 		<Footer />
 	</section>
 </main>
