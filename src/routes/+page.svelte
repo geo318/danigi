@@ -1,18 +1,18 @@
 <script>
-	import { Navbar, Fold, Button, Heading, Cars, Footer } from '$components';
-	import { infoIcons, autoList, bodyType1, bodyType2, generateCargoSectionKeys, steps } from '$lib';
+	import { Navbar, Fold, Button, Heading, Cars, Footer, Form } from '$components';
+	import { infoIcons, bodyType1, bodyType2 } from '$lib';
+	import { autoList, generateCargoSectionKeys, steps } from '$configs';
 	import * as m from '$paraglide/messages';
-	import Form from '$src/components/Form.svelte';
 
-	let openForm = false;
-	const handleClose = () => (openForm = false);
-	const handleOpen = () => (openForm = true);
+	let isFormOpen = false;
+	const handleClose = () => (isFormOpen = false);
+	const handleOpen = () => (isFormOpen = true);
 </script>
 
 <Navbar />
 
 <Fold {handleOpen} />
-{#if openForm}
+{#if isFormOpen}
 	<Form {handleClose} />
 {/if}
 

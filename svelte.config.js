@@ -12,6 +12,8 @@ const config = {
 			$src: './src',
 			$lib: './src/lib',
 			$components: './src/components',
+			$configs: './src/configs',
+			$schema: './src/schema',
 		}
 	}
 };

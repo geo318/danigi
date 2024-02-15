@@ -1,4 +1,4 @@
-import { mb, hk, oc, rs } from '../assets';
+import { mb, hk, oc, rs } from '../lib/assets';
 
 export const navItems = [
 	{ name: 'nav_cars', href: '#cars' },
@@ -12,6 +12,13 @@ export const locales = {
 	en: '🇬🇧',
 	ka: '🇬🇪',
 	ru: '🇷🇺'
+} as const;
+
+export const formInputs = {
+	name: '',
+	phone: '',
+	email: '',
+	comment: ''
 } as const;
 
 export const autoList = [

@@ -1,5 +1,6 @@
 <script>
-	import { logo, navItems } from '$lib';
+	import { logo } from '$lib';
+	import { navItems } from '$configs';
 	import { LangSwitcher } from '$components';
 	import * as m from '$paraglide/messages';
 </script>
