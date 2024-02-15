@@ -11,7 +11,7 @@
 		<img src={footer} alt="footer bg" class="absolute inset-0 w-full my-auto -z-10" />
 		<div class="absolute inset-0 bg-black bg-opacity-85 -z-10" />
 		<h3 class="text-3xl z-10">{m.footer_h()}, Reutlingen, Index: 72764</h3>
-		<div>WhatsApp; Viber: +995 595 666 777</div>
+		<div>WhatsApp, Viber: +995 595 666 777</div>
 	</div>
 
 	<section class="bg-black">
