@@ -26,15 +26,27 @@
 			{#each inputs as name}
 				<div class="flex flex-col gap-2">
 					<label for={name}>{name}</label>
-					<input
-						type="text"
-						{name}
-						id={name}
-						class="border border-black rounded-md py-3 px-7"
-						placeholder="Enter your {name}"
-						bind:value={$form[name]}
-						{...$constraints[name]}
-					/>
+					{#if name !== 'comment'}
+						<input
+							type="email"
+							{name}
+							id={name}
+							class="border border-black rounded-md py-3 px-7"
+							placeholder="Enter your {name}"
+							bind:value={$form[name]}
+							{...$constraints[name]}
+						/>
+					{:else}
+						<textarea
+							{name}
+							id={name}
+							class="border border-black rounded-md py-3 px-7"
+							placeholder="Enter your {name}"
+							rows    ="5"
+							bind:value={$form[name]}
+							{...$constraints[name]}
+						/>
+					{/if}
 					{#if $errors[name]}<span class="invalid">{$errors[name]}</span>{/if}
 				</div>
 			{/each}
