@@ -1,12 +1,12 @@
 import { mb, hk, oc, rs } from '../assets';
 
 export const navItems = [
-	{ name: 'ავტომობილები', href: '/' },
-	{ name: 'ტვირთები', href: '/needs' },
-	{ name: 'ფასები', href: '/service' },
-	{ name: 'ჩვენს შესახებ', href: '/about' },
-	{ name: 'კონტაქტი', href: '/contact' }
-];
+	{ name: 'nav_cars', href: '/' },
+	{ name: 'nav_cargo', href: '/needs' },
+	{ name: 'nav_prices', href: '/service' },
+	{ name: 'nav_about', href: '/about' },
+	{ name: 'nav_contact', href: '/contact' }
+] as const;
 
 export const locales = {
 	en: '🇬🇧',
