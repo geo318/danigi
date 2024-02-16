@@ -66,5 +66,12 @@
 	"fold_order_car_cargo": "შეუკვეთე ტვირთი ან ავტომობილი მარტივად",
 	"fold_action": "შეკვეთის გაფორმება",
 	"fold_contact": "დაგვიკავშირდი",
-	"price_insight": "გაინტერესებს ფასები? - დაგვირეკე:"
+	"price_insight": "გაინტერესებს ფასები? - დაგვირეკე:",
+	"form_placeholder": "ჩაწერე",
+	"form_name": "სახელი",
+	"form_email": "ელ.ფოსტა",
+	"form_phone": "ტელეფონი",
+	"form_comment": "ინფორმაცია",
+	"form_info": "ჩაწერე დეტალური ინფორმაცია",
+	"order_action": "შეკვეთა"
 }

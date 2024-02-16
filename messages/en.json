@@ -66,5 +66,12 @@
 	"fold_order_car_cargo": "Order cargo or car easily",
 	"fold_action": "Order form",
 	"fold_contact": "Contact us",
-	"price_insight": "Interested in prices? - Contact us:"
+	"price_insight": "Interested in prices? - Contact us:",
+	"form_placeholder": "Enter your",
+	"form_name": "Name",
+	"form_email": "Email",
+	"form_phone": "Phone",
+	"form_comment": "Message",
+	"form_info": "Enter Detailed information",
+	"order_action": "order"
 }

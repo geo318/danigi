@@ -27,7 +27,7 @@
 
 					<Button className="mt-8 mb-auto" onClick={handleOpen}>{m.fold_action()}</Button>
 
-					<a href="#footer" class="font-semibold underline">{m.fold_contact()}</a>
+					<a href="#contact" class="font-semibold underline">{m.fold_contact()}</a>
 				</section>
 
 				<div class="bg-black opacity-20 absolute inset-0 -z-10" />

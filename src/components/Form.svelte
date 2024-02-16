@@ -3,6 +3,7 @@
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import { newOrderSchema } from '$schema';
 	import { formInputs } from '$configs';
+	import * as m from '$paraglide/messages';
 	import { z } from 'zod';
 
 	export let handleClose: () => void;
@@ -25,14 +26,15 @@
 		<form method="POST" class="flex flex-col gap-6" use:enhance>
 			{#each inputs as name}
 				<div class="flex flex-col gap-2">
-					<label for={name}>{name}</label>
+					<label class="capitalize font-medium" for={name}
+						>{name === 'comment' ? m.form_info() : m[`form_${name}`]()}</label
+					>
 					{#if name !== 'comment'}
 						<input
-							type="email"
 							{name}
 							id={name}
 							class="border border-black rounded-md py-3 px-7"
-							placeholder="Enter your {name}"
+							placeholder="{m.form_placeholder()} {m[`form_${name}`]()}"
 							bind:value={$form[name]}
 							{...$constraints[name]}
 						/>
@@ -41,16 +43,18 @@
 							{name}
 							id={name}
 							class="border border-black rounded-md py-3 px-7"
-							placeholder="Enter your {name}"
-							rows    ="5"
+							placeholder="{m.form_placeholder()} {name}"
+							rows="5"
 							bind:value={$form[name]}
 							{...$constraints[name]}
 						/>
 					{/if}
-					{#if $errors[name]}<span class="invalid">{$errors[name]}</span>{/if}
+					{#if $errors[name]}<span class="invalid text-red-500">{$errors[name]}</span>{/if}
 				</div>
 			{/each}
-			<button type="submit" class="bg-[#ED1B23] text-white py-3 rounded-lg"> Send </button>
+			<button type="submit" class="bg-[#ED1B23] text-white py-3 rounded-lg uppercase font-bold"
+				>{m.order_action()}</button
+			>
 		</form>
 	</div>
 </div>
