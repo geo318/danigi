@@ -19,9 +19,11 @@
 	const inputs = Object.keys(formInputs) as (keyof typeof formInputs)[];
 </script>
 
-<div class="fixed inset-0 flex items-center justify-center z-50">
+<div class="fixed inset-0 flex lg:items-center justify-center z-50">
 	<button class="fixed bg-black bg-opacity-50 inset-0 -z-10" on:click={handleClose} />
-	<div class="flex flex-col max-w-[80vw] lg:max-w-[40rem] w-full bg-white p-10 rounded-xl z-10">
+	<div
+		class="flex flex-col max-w-[90vw] lg:max-w-[40rem] mb-auto mt-5 lg:mt-10 w-full bg-white lg:p-10 p-5 rounded-xl z-10"
+	>
 		<button class="ml-auto cursor-pointer text-lg" on:click={handleClose}>&#x2715;</button>
 		<form method="POST" class="flex flex-col gap-6" use:enhance>
 			{#each inputs as name}

@@ -8,15 +8,15 @@
 
 <section class="grid-box text-white">
 	<div class="bg-black opacity-70 grid-bg" />
-	<img src={banner} alt="banner" class="w-full grid-bg" />
-	<section class="grid-bg grid-box max-w-[100rem] px-20 mx-auto w-full">
-		<div class="left-col z-10 flex flex-col justify-center gap-8 w-full">
+	<img src={banner} alt="banner" class="w-full grid-bg h-full object-cover" />
+	<section class="grid-bg grid-box max-w-[100rem] lg:px-20 px-5 mx-auto w-full">
+		<div class="left-col z-10 lg:flex hidden flex-col justify-center gap-8 w-full">
 			<h1 class="text-5xl font-bold leading-normal">{m.fold_car_transport()}</h1>
 			<h3 class="font-medium text-lg">{m.fold_cargo_transport()}</h3>
 		</div>
-		<div class="flex right-col z-10 w-full">
+		<div class="flex lg:right-col grid-bg py-5 z-10 w-full">
 			<div
-				class="h-full max-w-[30rem] ml-auto w-full max-h-[32rem] my-auto rounded-lg relative p-10 overflow-hidden shadow"
+				class="h-full lg:max-w-[30rem] min-h-96 lg:ml-auto w-full max-h-[32rem] my-auto rounded-lg relative p-10 overflow-hidden shadow"
 			>
 				<section class="flex flex-col h-full text-center">
 					<div class="flex gap-3 font-bold w-full justify-center items-center text-2xl">
