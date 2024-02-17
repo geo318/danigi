@@ -3,9 +3,9 @@
 	export let className = '';
 </script>
 
-<section class="py-4 w-full">
+<section class="py-4 w-full {className}">
 	<div
-		class="auto-cols grid md:flex justify-between max-w-[100rem] mx-auto lg:px-20 px-3 {className}"
+		class="auto-cols grid md:flex justify-between max-w-[100rem] mx-auto lg:px-20 px-3"
 	>
 		{#each cars.sort(() => Math.random() - 0.5) as car}
 			<div class="shrink-0">

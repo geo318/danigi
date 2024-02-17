@@ -18,7 +18,7 @@
 
 <main class="flex flex-col items-center">
 	<Heading id="cars">{m.auto_transport()}</Heading>
-	<section class="max-w-[100rem] w-full mx-20 p-10 rounded-3xl bg-white grid grid-cols-2 gap-20">
+	<section class="max-w-[100rem] mx-12 p-10 rounded-3xl bg-white grid grid-cols-2 gap-20">
 		<div>
 			<h5 class="mb-8 text-2xl font-medium">{m.why_h()}</h5>
 			<p class="mt-2 leading-relaxed">
@@ -54,9 +54,9 @@
 	<Heading id="price">{m.transport()}</Heading>
 
 	<section
-		class="max-w-[100rem] w-full mx-20 p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
+		class="max-w-[100rem] mx-12 p-10 w-[calc(100%-6rem)] rounded-3xl bg-white gap-20 overflow-hidden relative"
 	>
-		<Cars className="absolute top-0 inset-x-0 bg-black bg-opacity-70" />
+		<Cars className="absolute top-0 inset-x-0 bg-black bg-opacity-70 py-5" />
 		<div class="h-10" />
 
 		<div class="grid grid-cols-4 gap-10 justify-between mt-10">
@@ -88,7 +88,7 @@
 
 	<Heading>{m.order()}</Heading>
 	<section
-		class="max-w-[100rem] mx-20 w-full p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
+		class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
 	>
 		<h3 class="text-3xl text-medium text-center">{m.order_h3()}</h3>
 		<h5 class="text-center mt-8">{m.order_h5()}</h5>
@@ -101,7 +101,7 @@
 
 	<Heading id="cargo">{m.cargo_transport()}</Heading>
 	<section
-		class="max-w-[100rem] mx-20 overflow-hidden relative grid grid-cols-3 w-full gap-5 text-slate-800"
+		class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] overflow-hidden relative grid grid-cols-3 gap-5 text-slate-800"
 	>
 		{#each generateCargoSectionKeys() as section}
 			<div class="bg-white rounded-2xl p-10">
@@ -117,12 +117,12 @@
 	</section>
 
 	<Heading className="mb-5">{m.steps()}</Heading>
-	<section class="max-w-[100rem] mx-20 w-full pb-10 overflow-hidden relative">
+	<section class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] pb-10 overflow-hidden relative">
 		<h3 class="text-center">
 			{m.steps_sub()}
 		</h3>
 	</section>
-	<section class="max-w-[100rem] mx-20 w-full p-10 overflow-hidden relative">
+	<section class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] p-10 overflow-hidden relative">
 		<div class="border-t border-zinc-300 w-full" />
 		<ul class="-mt-6 pb-10 flex justify-around">
 			{#each steps as step, i}
@@ -142,7 +142,7 @@
 	</section>
 
 	<Heading id="about">{m.about_h()}</Heading>
-	<section class="max-w-[100rem] w-full p-10 rounded-3xl bg-white overflow-hidden relative">
+	<section class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] p-10 rounded-3xl bg-white overflow-hidden relative">
 		<p class="text-sm text-slate-800 leading-loose">{m.about()}</p>
 	</section>
 
