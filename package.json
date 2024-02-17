@@ -59,6 +59,7 @@
 	"type": "module",
 	"dependencies": {
 		"@inlang/paraglide-js-adapter-sveltekit": "^0.4.0",
+		"dotenv": "^16.4.4",
 		"path": "^0.12.7",
 		"resend": "^3.2.0",
 		"sveltekit-i18n": "^2.4.2",

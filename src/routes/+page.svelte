@@ -17,7 +17,7 @@
 {/if}
 
 <main class="flex flex-col items-center">
-	<Heading id="car">{m.auto_transport()}</Heading>
+	<Heading id="cars">{m.auto_transport()}</Heading>
 	<section class="max-w-[100rem] w-full mx-20 p-10 rounded-3xl bg-white grid grid-cols-2 gap-20">
 		<div>
 			<h5 class="mb-8 text-2xl font-medium">{m.why_h()}</h5>
