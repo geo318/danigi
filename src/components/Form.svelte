@@ -5,18 +5,19 @@
 	import { formInputs } from '$configs';
 	import * as m from '$paraglide/messages';
 	import { z } from 'zod';
+	import SuperDebug from 'sveltekit-superforms';
 
 	export let handleClose: () => void;
 	let data: { form: z.infer<typeof newOrderSchema> } = {
 		form: formInputs
 	};
 
-	const { form, enhance, errors, constraints } = superForm(data.form, {
+	const { form, enhance, errors, constraints, message } = superForm(data.form, {
 		taintedMessage: 'You sure you want to leave?',
-		clearOnSubmit: 'errors-and-message',
 		validators: zodClient(newOrderSchema)
 	});
 	const inputs = Object.keys(formInputs) as (keyof typeof formInputs)[];
+	console.log($form, message);
 </script>
 
 <div class="fixed inset-0 flex lg:items-center justify-center z-50">
@@ -26,6 +27,14 @@
 	>
 		<button class="ml-auto cursor-pointer text-lg" on:click={handleClose}>&#x2715;</button>
 		<form method="POST" class="flex flex-col gap-6" use:enhance>
+			{#if $message}
+				<div
+					class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+					role="alert"
+				>
+					<strong class="font-bold">{$message}</strong>
+				</div>
+			{/if}
 			{#each inputs as name}
 				<div class="flex flex-col gap-2">
 					<label class="capitalize font-medium" for={name}
