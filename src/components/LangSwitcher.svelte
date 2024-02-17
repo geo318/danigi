@@ -3,9 +3,10 @@
 	import { page } from '$app/stores';
 	import { i18n } from '$lib/i18n.js';
 	import { locales } from '$configs';
+	export let className = '';
 </script>
 
-<div class="flex gap-2 px-5">
+<div class="flex gap-2 px-5 {className}">
 	{#each availableLanguageTags as lang}
 		<a href={i18n.route($page.url.pathname)} hreflang={lang}>{locales[lang]}</a>
 	{/each}
