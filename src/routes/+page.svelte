@@ -18,7 +18,7 @@
 
 <main class="flex flex-col items-center">
 	<Heading id="cars">{m.auto_transport()}</Heading>
-	<section class="max-w-[100rem] mx-12 p-10 rounded-3xl bg-white grid grid-cols-2 gap-20">
+	<section class="max-w-[100rem] lg:mx-12 p-10 rounded-3xl bg-white grid lg:grid-cols-2 gap-20">
 		<div>
 			<h5 class="mb-8 text-2xl font-medium">{m.why_h()}</h5>
 			<p class="mt-2 leading-relaxed">
@@ -54,19 +54,21 @@
 	<Heading id="price">{m.transport()}</Heading>
 
 	<section
-		class="max-w-[100rem] mx-12 p-10 w-[calc(100%-6rem)] rounded-3xl bg-white gap-20 overflow-hidden relative"
+		class="max-w-[100rem] lg:mx-12 lg:p-10 p-5 py-10 lg:w-[calc(100%-6rem)] rounded-3xl bg-white gap-20 overflow-hidden relative"
 	>
 		<Cars className="absolute top-0 inset-x-0 bg-black bg-opacity-70 py-5" />
 		<div class="h-10" />
 
-		<div class="grid grid-cols-4 gap-10 justify-between mt-10">
+		<div class="grid lg:grid-cols-4 grid-cols-2 lg:gap-10 gap-3 mt-10">
 			{#each autoList as { name, bg, list }}
-				<section class="border border-zinc-300 rounded-lg overflow-hidden">
+				<section
+					class="border border-zinc-300 rounded-lg lg:overflow-hidden overflow-y-auto lg:max-h-full max-h-80"
+				>
 					<figure class="relative">
 						<img src={bg} alt={name} class="w-full" />
 						<div class="absolute inset-0 bg-black bg-opacity-50" />
 						<figcaption
-							class="text-white absolute z-10 inset-0 flex items-center justify-center text-2xl font-medium"
+							class="text-white absolute z-10 inset-0 flex items-center justify-center lg:text-2xl text-lg font-medium"
 						>
 							{name}
 						</figcaption>
@@ -80,20 +82,20 @@
 				</section>
 			{/each}
 		</div>
-		<address class="text-right text-red-600 mt-5">
-			<span>&#128222; {m.price_insight()}</span>
+		<address class="text-right text-red-600 mt-5 flex flex-col lg:flex-row">
+			<span class="ml-auto">&#128222; {m.price_insight()}</span>
 			<a href="tel:+995555666777">+995 555 666 777</a>
 		</address>
 	</section>
 
 	<Heading>{m.order()}</Heading>
 	<section
-		class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
+		class="max-w-[100rem] lg:mx-12 lg:w-[calc(100%-6rem)] p-10 rounded-3xl bg-white gap-20 overflow-hidden relative"
 	>
-		<h3 class="text-3xl text-medium text-center">{m.order_h3()}</h3>
+		<h3 class="lg:text-3xl text-xl text-medium text-center">{m.order_h3()}</h3>
 		<h5 class="text-center mt-8">{m.order_h5()}</h5>
 
-		<figure class="grid grid-cols-2 gap-10">
+		<figure class="grid lg:grid-cols-2 gap-10">
 			<div class="pt-8"><img src={bodyType1} alt="transport" class="w-full" /></div>
 			<div><img src={bodyType2} alt="transport" class="w-full" /></div>
 		</figure>
@@ -101,7 +103,7 @@
 
 	<Heading id="cargo">{m.cargo_transport()}</Heading>
 	<section
-		class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] overflow-hidden relative grid grid-cols-3 gap-5 text-slate-800"
+		class="max-w-[100rem] lg:mx-12 lg:w-[calc(100%-6rem)] overflow-hidden relative grid lg:grid-cols-3 gap-5 text-slate-800"
 	>
 		{#each generateCargoSectionKeys() as section}
 			<div class="bg-white rounded-2xl p-10">
@@ -117,12 +119,12 @@
 	</section>
 
 	<Heading className="mb-5">{m.steps()}</Heading>
-	<section class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] pb-10 overflow-hidden relative">
+	<section class="max-w-[100rem] lg:mx-12 lg:w-[calc(100%-6rem)] pb-10 overflow-hidden relative">
 		<h3 class="text-center">
 			{m.steps_sub()}
 		</h3>
 	</section>
-	<section class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] p-10 overflow-hidden relative">
+	<section class="max-w-[100rem] lg:mx-12 lg:w-[calc(100%-6rem)] p-10 overflow-hidden relative">
 		<div class="border-t border-zinc-300 w-full" />
 		<ul class="-mt-6 pb-10 flex justify-around">
 			{#each steps as step, i}
@@ -142,7 +144,9 @@
 	</section>
 
 	<Heading id="about">{m.about_h()}</Heading>
-	<section class="max-w-[100rem] mx-12 w-[calc(100%-6rem)] p-10 rounded-3xl bg-white overflow-hidden relative">
+	<section
+		class="max-w-[100rem] lg:mx-12 lg:w-[calc(100%-6rem)] p-10 rounded-3xl bg-white overflow-hidden relative"
+	>
 		<p class="text-sm text-slate-800 leading-loose">{m.about()}</p>
 	</section>
 
