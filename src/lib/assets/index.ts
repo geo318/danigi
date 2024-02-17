@@ -1,5 +1,5 @@
 import logo from './logo.png';
-import banner from './banner.png';
+import banner from './banner.webp';
 import pin from './pin.svg';
 import search from './search.svg';
 import setting from './setting.svg';
