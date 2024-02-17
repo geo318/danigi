@@ -19,7 +19,7 @@ export const actions = {
 
 		const { error } = await resend.emails.send({
 			from: `${SENDER} ${EMAIL}`,
-			to: ['delivered@resend.dev'],
+			to: [form.data.email, EMAIL ?? ''],
 			subject: 'Wew order received',
 			html: `
 				${form.data.name} has placed a new order.
@@ -33,6 +33,7 @@ export const actions = {
 			fail(500, {
 				message: error
 			});
+
 		return message(form, 'Success!');
 	}
 };
