@@ -7,6 +7,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		csrf: {
+			checkOrigin: false
+		},
 		alias: {
 			$paraglide: './src/paraglide',
 			$src: './src',
