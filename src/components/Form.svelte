@@ -17,7 +17,6 @@
 		validators: zodClient(newOrderSchema)
 	});
 	const inputs = Object.keys(formInputs) as (keyof typeof formInputs)[];
-	console.log($form, message);
 </script>
 
 <div class="fixed inset-0 flex lg:items-center justify-center z-50">
